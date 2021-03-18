@@ -91,9 +91,9 @@ class AntColony1(object):
         return path
 
     def pick_move(self, pheromone, dist, visited):
-        # here we use this line to avoid any change in the referance array
+        # here we use this line to avoid any change in the reference array
         pheromone = np.copy(pheromone)
-        #to make a probapilty being zero for those nodes which is already visited
+        #to make a probabilty being zero for those nodes which is already visited
         pheromone[list(visited)] = 0
         row = pheromone ** self.alpha * ((1.0 / dist) ** self.beta)
         norm_row = row / row.sum()
